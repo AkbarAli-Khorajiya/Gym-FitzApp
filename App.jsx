@@ -13,11 +13,11 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='initialScreen'>
-        <Stack.Screen name='initialScreen' component={InitialPage} screenOptions={{ headerShown: false }} />
-        <Stack.Screen name='SecondScreen' component={SecondPage} screenOptions={{ headerShown: false }} />
-        <Stack.Screen name='ThirdScreen' component={ThirdScreen} screenOptions={{ headerShown: false }} />
-        <Stack.Screen name='SignIn' component={SignIn} screenOptions={{ headerShown: true }} />
+      <Stack.Navigator initialRouteName='initialScreen' screenOptions={{ headerShown: false }}>
+        <Stack.Screen name='initialScreen' component={InitialPage} />
+        <Stack.Screen name='SecondScreen' component={SecondPage} />
+        <Stack.Screen name='ThirdScreen' component={ThirdScreen} />
+        <Stack.Screen name='SignIn' component={SignIn} />
         <Stack.Screen name='SignUp' component={SignUp} />
         <Stack.Screen name='Verification' component={Verification} />
       </Stack.Navigator>
