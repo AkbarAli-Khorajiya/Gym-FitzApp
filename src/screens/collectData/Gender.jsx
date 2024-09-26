@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const main = () => {
+const Gender = () => {
     return (
-        <Tab>
-            <Tab.Screen></Tab.Screen>
-        </Tab>
+        <View>
+            <Text>Gender</Text>
+        </View>
     )
 }
 
-export default main
+export default Gender
 
 const styles = StyleSheet.create({})

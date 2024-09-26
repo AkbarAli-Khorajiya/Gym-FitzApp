@@ -8,6 +8,7 @@ import ThirdScreen from './src/screens/onBoarding/ThirdScreen';
 import SignIn from './src/screens/auth/SignIn';
 import SignUp from './src/screens/auth/SignUp';
 import Verification from './src/screens/auth/Verification';
+import Gender from './src/screens/collectData/Gender';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Stack.Screen name='SignIn' component={SignIn} />
         <Stack.Screen name='SignUp' component={SignUp} />
         <Stack.Screen name='Verification' component={Verification} />
+        <Stack.Screen name='Gender' component={Gender} />
       </Stack.Navigator>
     </NavigationContainer>
   )
