@@ -21,7 +21,7 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='initialScreen' screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName='Graph' screenOptions={{ headerShown: false }}>
         <Stack.Screen name='initialScreen' component={InitialPage} />
         <Stack.Screen name='SecondScreen' component={SecondPage} />
         <Stack.Screen name='ThirdScreen' component={ThirdScreen} />
