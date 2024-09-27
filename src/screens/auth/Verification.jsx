@@ -1,7 +1,7 @@
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { OtpInput } from "react-native-otp-entry";
-const Verification = () => {
+const Verification = ({ navigation }) => {
     return (
 
         <SafeAreaView style={{ flex: 1 }}>
@@ -55,7 +55,14 @@ const Verification = () => {
                 </View>
                 <View style={styles.phoneChange}>
                     <Text style={{ fontSize: 15.4, lineHeight: 21.17, color: "#000", }}>Don't receive your code?</Text>
-                    <Text style={{ fontSize: 15.4, lineHeight: 21.17, fontWeight: "600", color: "#3D37F1" }}>Resend</Text>
+                    <Text
+                        onPress={() => (navigation.navigate('Gender'))}
+                        style={{
+                            fontSize: 15.4,
+                            lineHeight: 21.17,
+                            fontWeight: "600",
+                            color: "#3D37F1"
+                        }}>Resend</Text>
 
                 </View>
             </View>

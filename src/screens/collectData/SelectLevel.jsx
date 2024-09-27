@@ -1,13 +1,13 @@
 import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import both from '../../assets/images/both.png'
 import backArrow from '../../assets/images/backArrow.png'
-import { Screen } from 'react-native-screens'
+import dumble from '../../assets/images/la--dumbbell.png'
+import weight from '../../assets/images/weight.png'
 
 
 // import { SafeAreaView } from 'react-native-safe-area-context'
 
-const Gender = ({ navigation }) => {
+const SelectLevel = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.screen} >
             <ScrollView style={styles.container}>
@@ -15,32 +15,37 @@ const Gender = ({ navigation }) => {
                     <TouchableOpacity onPress={() => navigation.goBack()}>
                         <Image source={backArrow} style={styles.breadcrumbImg} />
                     </TouchableOpacity>
-                    <Text style={styles.breadcrumbText}>Step 1 of 8</Text>
+                    <Text style={styles.breadcrumbText}>Step 7 of 8</Text>
                     <TouchableOpacity onPress={() => (navigation.navigate('Graph'))}>
                         <Text style={{ fontSize: 18 }}>Skip</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.body} >
                     <View style={styles.title}>
-                        <Text style={styles.titleText}>Choose gender</Text>
+                        <Text style={styles.titleText}>Choose training level</Text>
                     </View>
+                    <TouchableOpacity style={styles.selectOption}>
+                        <Text style={styles.optionTitle}>Beginner</Text>
+                        <Text style={styles.optionSubTitle}>I want to start training</Text>
+                    </TouchableOpacity>
                     <TouchableOpacity style={styles.selectOptionActive}>
-                        <Text style={styles.icon}>👩</Text>
-                        <Text style={styles.optionText}>Woman</Text>
+                        <Text style={styles.optionTitle}>Irregular traning</Text>
+                        <Text style={styles.optionSubTitle}>I train 1-2 times a week</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.selectOption}>
-                        <Text style={styles.icon}>👨</Text>
-                        <Text style={styles.optionText}>Man</Text>
+                        <Text style={styles.optionTitle}>Medium</Text>
+                        <Text style={styles.optionSubTitle}>I train 3-5 times a week</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.selectOption}>
-                        <Image source={both} style={styles.img} />
-                        <Text style={styles.optionText}>Gender neutral</Text>
+                        <Text style={styles.optionTitle}>Advanced</Text>
+                        <Text style={styles.optionSubTitle}>I train more than 5 times a week</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>
             <TouchableOpacity
                 style={styles.btn}
-                onPress={() => (navigation.navigate('Goal'))}
+                onPress={() => (navigation.navigate('SelectActivities'))}
+                underlayColor="#ccc"
             >
                 <Text style={styles.btnText}>Continue</Text>
             </TouchableOpacity>
@@ -48,7 +53,7 @@ const Gender = ({ navigation }) => {
     )
 }
 
-export default Gender
+export default SelectLevel
 
 const styles = StyleSheet.create({
     screen: {
@@ -73,10 +78,11 @@ const styles = StyleSheet.create({
     body: {
         backgroundColor: '#fff',
         gap: 15,
-        marginTop: '20%'
+        marginTop: '10%'
     },
     title: {
-        width: '100%',
+        width: '70%',
+        alignSelf: 'center',
         justifyContent: 'center',
         alignItems: 'center',
         paddingVertical: 5,
@@ -85,47 +91,42 @@ const styles = StyleSheet.create({
     titleText: {
         fontSize: 28,
         fontWeight: '700',
-        lineHeight: 31,
-        color: "#000"
+        lineHeight: 35,
+        color: "#000",
+        textAlign: 'center'
     },
     selectOptionActive: {
         backgroundColor: '#fff',
-        height: 85,
-        alignItems: 'center',
+        height: 95,
         borderWidth: 2,
-        paddingHorizontal: '10%',
-        gap: '80%',
-        flexDirection: 'row',
+        justifyContent: 'center',
+        paddingHorizontal: 25,
+        gap: 5,
         borderRadius: 4
     },
     selectOption: {
         backgroundColor: '#fff',
-        height: 85,
-        alignItems: 'center',
+        height: 95,
+        justifyContent: 'center',
+        gap: 5,
         borderWidth: 1,
         borderColor: '#E5E9EF',
-        paddingHorizontal: '10%',
-        gap: '80%',
-        flexDirection: 'row',
+        paddingHorizontal: 25,
         borderRadius: 4
     },
     breadcrumbImg: {
         width: 25,
         height: 25,
     },
-    img: {
-        width: 31,
-        height: 31
-    },
-    icon: {
-        fontWeight: '500',
-        fontSize: 25,
-        color: '#000'
-    },
-    optionText: {
+    optionTitle: {
         fontWeight: '500',
         fontSize: 18,
         color: '#000'
+    },
+    optionSubTitle: {
+        color: '#000',
+        fontWeight: '300',
+        fontSize: 13.47
     },
     btn: {
         backgroundColor: '#000',

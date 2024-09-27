@@ -1,13 +1,13 @@
 import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import both from '../../assets/images/both.png'
 import backArrow from '../../assets/images/backArrow.png'
-import { Screen } from 'react-native-screens'
+import dumble from '../../assets/images/la--dumbbell.png'
+import weight from '../../assets/images/weight.png'
 
 
 // import { SafeAreaView } from 'react-native-safe-area-context'
 
-const Gender = ({ navigation }) => {
+const Goal = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.screen} >
             <ScrollView style={styles.container}>
@@ -15,32 +15,37 @@ const Gender = ({ navigation }) => {
                     <TouchableOpacity onPress={() => navigation.goBack()}>
                         <Image source={backArrow} style={styles.breadcrumbImg} />
                     </TouchableOpacity>
-                    <Text style={styles.breadcrumbText}>Step 1 of 8</Text>
+                    <Text style={styles.breadcrumbText}>Step 2 of 8</Text>
                     <TouchableOpacity onPress={() => (navigation.navigate('Graph'))}>
                         <Text style={{ fontSize: 18 }}>Skip</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.body} >
                     <View style={styles.title}>
-                        <Text style={styles.titleText}>Choose gender</Text>
+                        <Text style={styles.titleText}>Choose main goal</Text>
                     </View>
                     <TouchableOpacity style={styles.selectOptionActive}>
-                        <Text style={styles.icon}>👩</Text>
-                        <Text style={styles.optionText}>Woman</Text>
+                        <Image source={weight} style={styles.img} />
+                        <Text style={styles.optionText}>Loose weight</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.selectOption}>
-                        <Text style={styles.icon}>👨</Text>
-                        <Text style={styles.optionText}>Man</Text>
+                        <Text style={styles.icon}>🍀</Text>
+                        <Text style={styles.optionText}>Keep fit</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.selectOption}>
-                        <Image source={both} style={styles.img} />
-                        <Text style={styles.optionText}>Gender neutral</Text>
+                        <Text style={styles.icon}>💪</Text>
+                        <Text style={styles.optionText}>Get stronger</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.selectOption}>
+                        <Image source={dumble} style={styles.img} />
+                        <Text style={styles.optionText}>Gain muscle mass</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>
             <TouchableOpacity
                 style={styles.btn}
-                onPress={() => (navigation.navigate('Goal'))}
+                onPress={() => (navigation.navigate('SelectHeight'))}
+                underlayColor="#ccc"
             >
                 <Text style={styles.btnText}>Continue</Text>
             </TouchableOpacity>
@@ -48,7 +53,7 @@ const Gender = ({ navigation }) => {
     )
 }
 
-export default Gender
+export default Goal
 
 const styles = StyleSheet.create({
     screen: {
@@ -61,6 +66,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     breadcrumb: {
+        // backgroundColor: "#fff",
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center'
@@ -115,7 +121,7 @@ const styles = StyleSheet.create({
     },
     img: {
         width: 31,
-        height: 31
+        height: 31,
     },
     icon: {
         fontWeight: '500',
@@ -129,8 +135,8 @@ const styles = StyleSheet.create({
     },
     btn: {
         backgroundColor: '#000',
-        marginHorizontal: 15,
         height: 52.93,
+        marginHorizontal: 15,
         marginBottom: 10,
         justifyContent: 'center',
         alignItems: 'center',

@@ -9,6 +9,13 @@ import SignIn from './src/screens/auth/SignIn';
 import SignUp from './src/screens/auth/SignUp';
 import Verification from './src/screens/auth/Verification';
 import Gender from './src/screens/collectData/Gender';
+import Goal from './src/screens/collectData/Goal';
+import SelectHeight from './src/screens/collectData/SelectHeight';
+import SelectWeight from './src/screens/collectData/SelectWeight';
+import SelectGoalWeight from './src/screens/collectData/SelectGoalWeight';
+import SelectLevel from './src/screens/collectData/SelectLevel';
+import SelectActivities from './src/screens/collectData/SelectActivities';
+import Graph from './src/screens/collectData/Graph';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -22,6 +29,13 @@ const App = () => {
         <Stack.Screen name='SignUp' component={SignUp} />
         <Stack.Screen name='Verification' component={Verification} />
         <Stack.Screen name='Gender' component={Gender} />
+        <Stack.Screen name='Goal' component={Goal} />
+        <Stack.Screen name='SelectHeight' component={SelectHeight} />
+        <Stack.Screen name='SelectWeight' component={SelectWeight} />
+        <Stack.Screen name='SelectGoalWeight' component={SelectGoalWeight} />
+        <Stack.Screen name='SelectLevel' component={SelectLevel} />
+        <Stack.Screen name='SelectActivities' component={SelectActivities} />
+        <Stack.Screen name='Graph' component={Graph} />
       </Stack.Navigator>
     </NavigationContainer>
   )
